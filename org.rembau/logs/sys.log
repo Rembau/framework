@@ -1,0 +1,6 @@
+[2013-03-04 16:55:40]INFO  org.rembau.command.CommandClient(line:30) -Server is stoped,please run "classname start",startup the programe.
+[2013-03-04 17:24:20]INFO  org.rembau.command.CommandServer(line:20) -server is started!
+[2013-03-04 17:24:33]INFO  org.rembau.command.CommandServer(line:65) -Connect accessed!
+[2013-03-04 17:24:35]INFO  org.rembau.command.CommandServer(line:69) -command of user:..
+[2013-03-04 17:25:01]INFO  org.rembau.command.CommandServer(line:69) -command of user:exit
+[2013-03-04 17:25:01]INFO  org.rembau.command.CommandServer(line:80) -Software caused connection abort: socket write error,user leaved!
