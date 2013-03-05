@@ -112,10 +112,10 @@ public class CommandClient extends Thread{
 			try {
 				while((feedbackStr=readFromSocket.readLine())!=null){
 					System.out.println(feedbackStr);
-					System.out.print(">");
 					if(feedbackStr.equals("user leaved!") || feedbackStr.equals("server's message:server is stoped!")){
 						break;
 					}
+					System.out.print(">");
 				}
 			} catch (IOException e) {
 				System.out.println(e.getMessage());
