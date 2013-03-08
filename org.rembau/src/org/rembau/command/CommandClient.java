@@ -47,7 +47,8 @@ public class CommandClient extends Thread{
 			new ShowFeedback(readFromSocket).start();
 			writeToSocket.writeBytes(cmd+"\n");
 			try {
-				Thread.sleep(10000); //暂停10秒，等收到服务端的回执信息在ShowFeedback中退出程序。
+				Thread.sleep(10000); 
+				//pause ten seconds unless receive the receipt,then exit.
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

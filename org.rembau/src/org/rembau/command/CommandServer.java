@@ -12,6 +12,7 @@ import org.rembau.command.Context;
 
 public class CommandServer extends Thread{ 
 	private static final Logger logger = Logger.getLogger(CommandServer.class);
+	private CommandHandle ch;
 	public void run(){
 		ServerSocket ss=null;
 		try {
@@ -75,6 +76,12 @@ public class CommandServer extends Thread{
 						writeToSocket.writeBytes("user leaved!\n");
 						logger.info("user leaved!");
 						break;
+					} else {
+						if(ch==null){
+							logger.info("Do not have CommandHandle yet!plase stop the server and repair.");
+							continue;
+						}
+						ch.excute(command);
 					}
 					writeToSocket.writeBytes("command of user:"+command+"\n");
 				}
@@ -91,6 +98,12 @@ public class CommandServer extends Thread{
 				}
 			}
 		}
+	}
+	/**
+	 * if you want to configuration own commands,you must inherit the Class CommandHandle and register.
+	 */
+	public void registerCommandHandle(CommandHandle ch){
+		this.ch=ch;
 	}
 	public static void main(String[] args) {
 		new CommandServer().start();

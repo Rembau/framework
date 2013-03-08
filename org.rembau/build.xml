@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="AntTest" default="doc">
+<project name="org.rembau" default="doc">
 	<!-- properies -->
 	<property name="src.dir" value="src" />
 	<property name="report.dir" value="report" />
@@ -60,7 +60,7 @@
 		<mkdir dir="${doc.dir}" />
 		<javadoc destdir="${doc.dir}" author="true" version="true" use="true" windowtitle="Test API">
 			<packageset dir="${src.dir}" defaultexcludes="yes">
-				<include name="example/**" />
+				<include name="org/**" />
 			</packageset>
 			<doctitle><![CDATA[<h1>Hello, test</h1>]]> </doctitle>
 			<bottom><![CDATA[<i>All Rights Reserved.</i>]]> </bottom>
