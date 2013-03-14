@@ -30,7 +30,7 @@ public class CommandClient extends Thread{
 				logger.info("Server is stoped,please run \"classname start\",startup the programe.");
 			}
 			System.out.println(e.getMessage());
-			return;
+			System.exit(0);
 		}
 		if(cmd.length()==0){
 			loop();

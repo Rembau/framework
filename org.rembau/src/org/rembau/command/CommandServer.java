@@ -27,6 +27,7 @@ public class CommandServer extends Thread{
 						"if you want run the program many time,please change the conf/extra.properties.port's value.";
 				System.out.println(str);
 				logger.info(str);
+				System.exit(0);
 			}else {
 				System.out.println(e.getMessage());
 				logger.info(e.getMessage());
@@ -77,11 +78,11 @@ public class CommandServer extends Thread{
 						logger.info("user leaved!");
 						break;
 					} else {
-						if(ch==null){
+						if(ch!=null){
 							logger.info("Do not have CommandHandle yet!plase stop the server and repair.");
-							continue;
+							ch.excute(command);
 						}
-						ch.excute(command);
+						
 					}
 					writeToSocket.writeBytes("command of user:"+command+"\n");
 				}
