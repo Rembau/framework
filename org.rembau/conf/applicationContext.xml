@@ -23,4 +23,37 @@
 	<bean id="baseJdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<constructor-arg ref="dataSource" />
 	</bean>
+	
+	<!-- Job -->
+	<bean id="job" class="org.rembau.task.JobDetail">
+		<property name="db" ref="dbManager"></property>
+		<property name="sql" value="${sql}"></property>
+	</bean>
+	<!-- JobDetail -->
+	<bean id="jobDetail"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref bean="job" />
+		</property>
+		<property name="targetMethod">
+			<value>excute</value>
+		</property>
+	</bean>
+
+	<!-- Trigger -->
+	<bean id="trigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="jobDetail" />
+		</property>
+		<property name="cronExpression" value="${cron}" />
+	</bean>
+	
+	<!-- Scheduler -->
+	<bean id="scheduler" lazy-init="false" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="trigger" />
+			</list>
+		</property>
+	</bean>
 </beans>
