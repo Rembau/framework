@@ -1,8 +1,8 @@
-package org.rembau.command;
+package org.rembau;
 
 import org.apache.log4j.Logger;
-import org.rembau.command.CommandClient;
-import org.rembau.command.CommandServer;
+import org.rembau.minaCommand.CommandClient;
+import org.rembau.minaCommand.CommandServer;
 
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 

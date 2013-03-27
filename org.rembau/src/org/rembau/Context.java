@@ -1,4 +1,4 @@
-package org.rembau.command;
+package org.rembau;
 
 import java.io.File;
 import java.util.Properties;

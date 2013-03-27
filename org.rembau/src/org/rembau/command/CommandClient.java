@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 import org.apache.log4j.Logger;
-import org.rembau.command.Context;
+import org.rembau.Context;
 
 
 public class CommandClient extends Thread{

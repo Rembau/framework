@@ -26,8 +26,6 @@
 	
 	<!-- Job -->
 	<bean id="job" class="org.rembau.task.JobDetail">
-		<property name="db" ref="dbManager"></property>
-		<property name="sql" value="${sql}"></property>
 	</bean>
 	<!-- JobDetail -->
 	<bean id="jobDetail"

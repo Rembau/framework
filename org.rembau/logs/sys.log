@@ -1,21 +1,11 @@
-[2013-03-04 16:55:40]INFO  org.rembau.command.CommandClient(line:30) -Server is stoped,please run "classname start",startup the programe.
-[2013-03-04 17:24:20]INFO  org.rembau.command.CommandServer(line:20) -server is started!
-[2013-03-04 17:24:33]INFO  org.rembau.command.CommandServer(line:65) -Connect accessed!
-[2013-03-04 17:24:35]INFO  org.rembau.command.CommandServer(line:69) -command of user:..
-[2013-03-04 17:25:01]INFO  org.rembau.command.CommandServer(line:69) -command of user:exit
-[2013-03-04 17:25:01]INFO  org.rembau.command.CommandServer(line:80) -Software caused connection abort: socket write error,user leaved!
-[2013-03-05 09:47:24]INFO  org.rembau.command.CommandClient(line:30) -Server is stoped,please run "classname start",startup the programe.
-[2013-03-05 09:50:24]INFO  org.rembau.command.CommandServer(line:20) -server is started!
-[2013-03-05 09:50:38]INFO  org.rembau.command.CommandServer(line:65) -Connect accessed!
-[2013-03-05 09:51:21]INFO  org.rembau.command.CommandServer(line:69) -command of user:hello world,can i make friend with you?
-[2013-03-05 09:51:32]INFO  org.rembau.command.CommandServer(line:69) -command of user:Yes ,you can.
-[2013-03-05 09:51:35]INFO  org.rembau.command.CommandServer(line:69) -command of user:thanks
-[2013-03-05 09:51:39]INFO  org.rembau.command.CommandServer(line:69) -command of user:exit
-[2013-03-05 09:51:39]INFO  org.rembau.command.CommandServer(line:76) -user leaved!
-[2013-03-05 09:53:03]INFO  org.rembau.command.CommandServer(line:65) -Connect accessed!
-[2013-03-05 09:53:16]INFO  org.rembau.command.CommandServer(line:69) -command of user:Hi,i come again.
-[2013-03-05 09:53:24]INFO  org.rembau.command.CommandServer(line:69) -command of user:shutup
-[2013-03-05 09:53:46]INFO  org.rembau.command.CommandServer(line:69) -command of user:ooo
-[2013-03-05 09:53:50]INFO  org.rembau.command.CommandServer(line:69) -command of user:stop it
-[2013-03-05 09:53:52]INFO  org.rembau.command.CommandServer(line:69) -command of user:stop
-[2013-03-05 09:53:52]INFO  org.rembau.command.CommandServer(line:72) -server's message:server is stoped!
+[2013-03-27 16:04:18]INFO  org.rembau.minaCommand.CommandServer(line:27) -Server is started!
+[2013-03-27 16:04:25]INFO  org.rembau.minaCommand.ServerHandler(line:23) -Connect accessed!
+[2013-03-27 16:04:33]INFO  org.rembau.minaCommand.ServerHandler(line:34) -command of user:ww
+[2013-03-27 16:04:36]INFO  org.rembau.minaCommand.ServerHandler(line:34) -command of user:nihao a
+[2013-03-27 16:04:43]INFO  org.rembau.minaCommand.ServerHandler(line:34) -command of user:exit
+[2013-03-27 16:04:43]INFO  org.rembau.minaCommand.ServerHandler(line:41) -user leaved!
+[2013-03-27 16:04:43]INFO  org.rembau.minaCommand.ServerHandler(line:15) -client has been disconnected
+[2013-03-27 16:05:02]INFO  org.rembau.minaCommand.ServerHandler(line:23) -Connect accessed!
+[2013-03-27 16:05:06]INFO  org.rembau.minaCommand.ServerHandler(line:34) -command of user:hello
+[2013-03-27 16:06:11]INFO  org.rembau.minaCommand.ServerHandler(line:34) -command of user:stop
+[2013-03-27 16:06:11]INFO  org.rembau.minaCommand.ServerHandler(line:37) -server's message:server is stoped!

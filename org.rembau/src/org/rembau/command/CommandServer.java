@@ -8,7 +8,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 import org.apache.log4j.Logger;
-import org.rembau.command.Context;
+import org.rembau.Context;
 
 public class CommandServer extends Thread{ 
 	private static final Logger logger = Logger.getLogger(CommandServer.class);
