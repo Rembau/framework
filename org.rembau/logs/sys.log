@@ -9,3 +9,16 @@
 [2013-03-27 16:05:06]INFO  org.rembau.minaCommand.ServerHandler(line:34) -command of user:hello
 [2013-03-27 16:06:11]INFO  org.rembau.minaCommand.ServerHandler(line:34) -command of user:stop
 [2013-03-27 16:06:11]INFO  org.rembau.minaCommand.ServerHandler(line:37) -server's message:server is stoped!
+[2013-04-15 14:31:59]INFO  org.rembau.minaCommand.CommandServer(line:27) -Server is started!
+[2013-04-15 14:32:08]INFO  org.rembau.minaCommand.ServerHandler(line:27) -a user Connection successful!
+[2013-04-15 14:32:11]INFO  org.rembau.minaCommand.ServerHandler(line:38) -command of user:eee
+[2013-04-15 14:32:13]INFO  org.rembau.minaCommand.ServerHandler(line:38) -command of user:tytr
+[2013-04-15 14:32:23]INFO  org.rembau.minaCommand.ServerHandler(line:16) -client has been disconnected
+[2013-04-15 14:33:17]INFO  org.rembau.minaCommand.ServerHandler(line:16) -client has been disconnected
+[2013-04-15 14:33:20]INFO  org.rembau.minaCommand.ServerHandler(line:16) -client has been disconnected
+[2013-04-15 14:33:28]INFO  org.rembau.minaCommand.ServerHandler(line:27) -a user Connection successful!
+[2013-04-15 14:33:30]INFO  org.rembau.minaCommand.ServerHandler(line:38) -command of user:dd
+[2013-04-15 14:36:24]INFO  org.rembau.minaCommand.ServerHandler(line:16) -client has been disconnected
+[2013-04-15 14:36:35]INFO  org.rembau.minaCommand.CommandServer(line:27) -Server is started!
+[2013-04-15 14:36:41]INFO  org.rembau.minaCommand.ServerHandler(line:29) -a user Connection successful!
+[2013-04-15 14:36:46]INFO  org.rembau.minaCommand.ServerHandler(line:20) -A extra client has been disconnected

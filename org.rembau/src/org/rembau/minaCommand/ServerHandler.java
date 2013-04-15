@@ -8,17 +8,23 @@ import org.rembau.Context;
 public class ServerHandler extends IoHandlerAdapter {
 	private static final Logger logger = Logger.getLogger(ServerHandler.class);
 	private CommandHandler ch;
+	private IoSession session;
 	public void exceptionCaught(IoSession session, Throwable cause) {
 		//System.out.println(cause);
 	}
 	public void sessionClosed(IoSession session){
-		logger.info("client has been disconnected");
-		Context.NUMOFCLIENT--;
+		if(this.session==session){
+			Context.NUMOFCLIENT--;
+			logger.info("client has been disconnected");
+		} else {
+			logger.info("A extra client has been disconnected");
+		}
 		session.close(true);
 	}
 	public void sessionCreated(IoSession session){
 		if(Context.NUMOFCLIENT==0){
 			Context.NUMOFCLIENT++;
+			this.session=session;
 			session.write("Connect accessed!");
 			logger.info("a user Connection successful!");
 		} else{
