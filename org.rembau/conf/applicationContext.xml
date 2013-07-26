@@ -8,8 +8,20 @@
 		<property name="locations">
 			<list>
 				<value>classpath:jdbc.properties</value>
+				<value>classpath:extra.properties</value>
 			</list>
 		</property>
+	</bean>
+	
+	<bean id="frameContext" class="org.rembau.Context">
+		<property name="CMD_S_PORT">
+				<value>${CMD_S_PORT}</value>
+		</property>
+		<property name="CMD_START" value="${CMD_START}"></property>
+		<property name="CMD_STOP" value="${CMD_STOP}"></property>
+		<property name="CMD_EXIT" value="${CMD_EXIT}"></property>
+		<property name="CMD_EXCUTE" value="${CMD_EXCUTE}"></property>
+		<property name="CMD_CLIENT" value="${CMD_CLIENT}"></property>
 	</bean>
 	
 	<!-- 数据源定义-->

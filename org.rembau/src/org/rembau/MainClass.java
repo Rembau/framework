@@ -16,7 +16,6 @@ public class MainClass {
 	private static final Logger logger = Logger.getLogger(MainClass.class);
 
 	public static void main(String[] args) {
-		Context.init(); // initialize context
 		for (int i = 0; i < args.length; i++) {
 		//	System.out.println(args[i]);
 		}
