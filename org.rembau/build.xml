@@ -22,7 +22,7 @@
 	<!-- 编译 -->
 	<target name="compile" depends="init" description="compile the source files">
 		<mkdir dir="${classes.dir}"/>
-		<javac srcdir="${src.dir}" destdir="${classes.dir}" target="1.5" includeantruntime="on">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" target="1.6" includeantruntime="on">
 			<classpath refid="master-classpath"/>
 		</javac>
 	</target>
