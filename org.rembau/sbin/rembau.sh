@@ -1,5 +1,7 @@
 SERVER_NAME="linkAutoBuild"
-SERVER_TAG="linkAutoBuild"
+SERVER_TAG=$SERVER_NAME"Server"
+SERVER_TAG_STOP=$SERVER_NAME"Stop"
+SERVER_TAG_COMMAND=$SERVER_NAME"Command"
 MAIN_CLASS="org.rembau.MainClass"
 LIB=../lib
 classpath=.
@@ -13,7 +15,13 @@ classpath="$classpath":../conf
 
 #echo $SERVER_NAME $SERVER_TAG $classpath
 
-STARTUP="/usr/jdk/jdk1.6.0_21/bin/java -mx64M -Diname=$SERVER_TAG -classpath $classpath $MAIN_CLASS $*"
+JAVA="/usr/jdk/jdk1.6.0_21/bin/java -mx512M"
+
+STARTUP="$JAVA -Diname=$SERVER_TAG -classpath $classpath $MAIN_CLASS $*"
+
+STOP="$JAVA -Diname=$SERVER_TAG_STOP -classpath $classpath $MAIN_CLASS $*"
+
+COMMAND="$JAVA -Diname=$SERVER_TAG_COMMAND -classpath $classpath $MAIN_CLASS $*"
 echo $STARTUP
 
 is_server_started(){
@@ -22,23 +30,24 @@ is_server_started(){
 	then 
 		return 0   #yes
 	else 
-		return 1    #no
+		return $pid    #no
 	fi	
 }
 
 start_proc(){
 	is_server_started
 	if [ $? -eq 0 ]; then
-                echo "${SERVER_TAG} ${SERVER_NAME} is already running !"
+                echo "${SERVER_NAME} is already running !"
         else
-                echo "${SERVER_TAG} Starting ${SERVER_NAME} ..."
-                nohup $STARTUP > ${LOG_FILE} 2>&1 &
-		sleep 1
+                echo "Starting ${SERVER_NAME} ..."
+                #nohup $STARTUP > ${LOG_FILE} 2>&1 &
+		nohup $STARTUP
+		sleep 2
 		is_server_started
 		if [ $? -eq 0 ]; then
-                	echo "${SERVER_TAG} ${SERVER_NAME} started !"
+                	echo "${SERVER_NAME} started !"
 		else
-                	echo "${SERVER_TAG} ${SERVER_NAME} starts failed !"
+                	echo "${SERVER_NAME} starts failed !"
 		fi
 
         fi
@@ -50,29 +59,23 @@ status_proc(){
                 echo "${SERVER_TAG} ${SERVER_NAME} is running !"
         	ps -ef | grep -w "${PROC_TAG}" | grep -v grep
         else
-                echo "${SERVER_TAG} ${SERVER_NAME} is not running !"
+                echo "${SERVER_NAME} is not running !"
         fi
 }
 
 stop_proc(){
         is_server_started
 	if [ $? -eq 0 ]; then
-		echo "${SERVER_TAG} ${SERVER_NAME} stoping !"
-		$STARTUP
-		sleep 1
-                is_server_started
-		if [ $? -eq 1 ]; then
-			echo "${SERVER_TAG} ${SERVER_NAME} stoped !"
-		else
-			echo "${ERROR_TAG} ${PROC_NAME} stop failed !"
-		fi
+		pid=`ps -ef|grep ${SERVER_TAG} |grep -v grep|awk '{print $2}'`
+		kill ${pid}
+		echo "${SERVER_NAME} is stoped !"
         else
-		echo "${SERVER_TAG} ${SERVER_NAME} is already stoped !"
+		echo "${SERVER_NAME} is already stoped !"
         fi
 }
 
 client(){
-	$STARTUP
+	$COMMAND
 }
 
 #=======================================================================
