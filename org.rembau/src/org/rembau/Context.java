@@ -3,7 +3,7 @@ package org.rembau;
 public class Context {
 	public static int NUMOFCLIENT=0; //当前客户端连接数
 	
-	public static int CMD_S_PORT=2000;
+	public static int CMD_S_PORT;
 	public static String CMD_START="start";
 	public static String CMD_STOP="stop";
 	public static String CMD_EXIT="exit";
